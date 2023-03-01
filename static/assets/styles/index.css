@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-bg              : #f7f7f7;
+    --color-primary         : #ffffff;
+    --color-secondary       : #cdcdcd;
+    --color-brand           : #006eff;
+
+    --color-text            : #1e1e1e;
+    --color-text-secondary  : #383838;
+
+    --text-font             : 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+    --color-bg              : #121214;
+    --color-primary         : #212126;
+    --color-secondary       : #444444;
+    --color-brand           : #006eff;
+
+    --color-text            : #ffffff;
+    --color-text-secondary  : #cdcdcd;
+
+    --text-font             : 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.auth {
+    width: 30%;
+    padding: 50px 50px;
+    background-color: var(--color-primary);
+    border-radius: 25px;
+
+    position: relative;
+}
+
+.auth > .top-container {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.top-container > .title {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    padding-left: 30px;
+    position: relative;
+}
+
+.top-container > .title::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-brand);
+    width: 15px;
+    height: 15px;
+
+
+    border-radius: 50%;
+    top: 22px;
+    left: 0;
+
+    animation: expandDot 1s ease infinite;
+}
+
+.top-container > .description {
+    color: var(--color-text-secondary);
+}
+
+.form > .input-box {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.form > .input-box label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.form > .input-box input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    padding: 18px 20px;
+    border-radius: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    font-size: 16px;
+
+    outline: none;
+    transition: 0.3s;
+
+    margin-top: 5px;
+}
+
+.form > .input-box input:focus {
+    border: 1px solid var(--color-brand);
+    transform: scale(1.03);
+
+}
+
+.form > .forgot-password {
+    font-weight: 400;
+    margin-top: 10px;
+    float: right;
+
+    color: var(--color-brand);
+} 
+
+.form > button[type="submit"] {
+    background-color: var(--color-brand);
+    font-family: var(--text-font);
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 17px;
+    padding: 20px 0;
+    color: white;
+    border: none;
+    width: 100%;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.form > button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+.form > .auth-mode {
+    display: block;
+    margin-top: 25px;
+}
+
+.form > .auth-mode a {
+    color: var(--color-brand);
+    font-weight: 600;
+}
+
+.form > .auth-mode a:hover {
+    opacity: 0.8;
+}
+
+@keyframes expandDot {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+@media screen and (max-width: 1100px) {
+    .auth {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    .auth {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
